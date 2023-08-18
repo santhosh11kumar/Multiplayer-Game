@@ -10,9 +10,13 @@
  
 }
 body{
+  overflow: hidden;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100vh;   
+  background: linear-gradient(to right, #7b7c7e, #9b9ea0);
+ 
+
 }
 
 .bg_img{
@@ -123,7 +127,7 @@ top: 0.2em;
 }
 
 .display_player{
-    min-width: 14rem;
+    min-width: 18rem;
     font-size: larger;
     color:rgb(44, 43, 43);
     font-weight: 800;  
@@ -190,6 +194,23 @@ top: 0.2em;
   border-right: 2px solid rgb(61, 60, 60);
 }
 
+
+.game_btn {
+  color: rgb(20, 13, 13);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size:large;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.game_btn.active {
+  opacity: 1;
+}
+
   .win{
     background-color: rgba(31, 175, 31, 0.3);
   }
@@ -197,7 +218,6 @@ top: 0.2em;
   overflow: hidden;
   position: absolute;
   top: 0;
-  z-index: -50;
   width: 100vw;
   height:100vh;
   background: #7e7e7e;
@@ -206,19 +226,22 @@ top: 0.2em;
 }
   .final_tab_{
     height: 90%;
+    width: 100vw;
     display: flex;
     align-items: center; 
     padding: 3rem;
     flex-direction: column;
     text-shadow: rgba(31, 31, 31, 0.25) 0px 54px 55px, rgba(187, 182, 182, 0.12) 0px -12px 30px, rgba(160, 160, 160, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    z-index: 5;
+    background: -webkit-linear-gradient(to right, #414345, #717577);
   }
   
-  .final_tab{ 
- 
+  .final_tab{
+    height: 90%;
+    width: 100vw;
     transition-timing-function: ease-in-out;
     transform: scale(0);
     transition-duration: 1s;
+    z-index: 5;
   }
   
   .final_tab.active{
@@ -251,6 +274,7 @@ top: 0.2em;
   }
 }
 .winner_{
+  position: relative;
   min-height: 14rem;
   padding: 2rem;
   font-family: 'Passion One', cursive;
@@ -259,15 +283,19 @@ top: 0.2em;
   text-shadow:3px 3px rgb(44, 44, 44), 1px 1px rgb(0, 0, 0) ;
 }
 .nav_{
+  position: relative;
+  z-index: 5;
   display: flex;
   align-items: center;
-  gap: 5rem;
+  width: 40%;
+  justify-content: space-around;
 }
 .replay_btn{
   width: 4.5rem;
 }
 .home_btn:hover,.replay_btn:hover{
   transition-delay: 0.15s;
-  transition-timing-function: ease-out;
-  transform: scale(1.05);
+  transition-timing-function: ease-in;
+  transform: scale(1.12);
+  color: aqua;
 }
